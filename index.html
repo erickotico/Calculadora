@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Avançada</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="app" data-theme="light">
+    <!-- Header -->
+    <header class="header">
+      <h1>Calculadora Avançada</h1>
+      <div class="header-buttons">
+        <button id="themeToggle" class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button id="helpButton" class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Calculator -->
+    <main class="calculator">
+      <div class="display">
+        <div id="previousResult" class="previous-result"></div>
+        <div id="currentDisplay" class="current-display">0</div>
+      </div>
+
+      <div class="keypad">
+        <button class="key" data-type="number">7</button>
+        <button class="key" data-type="number">8</button>
+        <button class="key" data-type="number">9</button>
+        <button class="key" data-type="operator">÷</button>
+        
+        <button class="key" data-type="number">4</button>
+        <button class="key" data-type="number">5</button>
+        <button class="key" data-type="number">6</button>
+        <button class="key" data-type="operator">×</button>
+        
+        <button class="key" data-type="number">1</button>
+        <button class="key" data-type="number">2</button>
+        <button class="key" data-type="number">3</button>
+        <button class="key" data-type="operator">-</button>
+        
+        <button class="key" data-type="number">0</button>
+        <button class="key" data-type="number">.</button>
+        <button class="key equals" data-type="equals">=</button>
+        <button class="key" data-type="operator">+</button>
+        
+        <button class="key" data-type="clear">C</button>
+        <button class="key" data-type="operator">%</button>
+        <button class="key" data-type="operator">√</button>
+        <button class="key" data-type="operator">^</button>
+      </div>
+
+      <button id="historyButton" class="history-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+        <span>Histórico</span>
+      </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Calculadora Avançada</p>
+    </footer>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Ajuda</h2>
+          <button class="close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>• Use os números e operadores para realizar cálculos básicos</p>
+          <p>• % - Calcula a porcentagem</p>
+          <p>• √ - Calcula a raiz quadrada</p>
+          <p>• ^ - Eleva um número a uma potência</p>
+          <p>• C - Limpa o visor</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Histórico</h2>
+          <button class="close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <div id="historyList" class="modal-body history-list"></div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollTop" class="scroll-top hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+  </div>
+
+  <script src="./js/calculator.js"></script>
+</body>
+</html>
